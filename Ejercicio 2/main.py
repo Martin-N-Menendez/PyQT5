@@ -21,7 +21,7 @@ class pandasModel(QAbstractTableModel):
 
     def data(self , index , role = Qt.DisplayRole):
         if index.isValid():
-            if role == QtDisplayRole:
+            if role == Qt.DisplayRole:
                 return str(self._data.iloc[index.row(),index.column()])
         return None
         
@@ -31,13 +31,13 @@ class pandasModel(QAbstractTableModel):
         return None
 
 
-        if __name__ == '__main__':
-            app = QApplication(sys.argv)
-            model = pandasModel(df)
-            view = QTableView()
-            view.setModel(model)
-            view.resize(800,600)
-            view.show()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    model = pandasModel(df)
+    view = QTableView()
+    view.setModel(model)
+    view.resize(800,600)
+    view.show()
 
-            sys.exit(app.exec_())
+    sys.exit(app.exec_())
 
