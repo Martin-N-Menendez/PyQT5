@@ -1,0 +1,6 @@
+{
+    "python.analysis.warnings": [
+        "unresolved-import"
+    ],
+    "python.pythonPath": "/usr/bin/python3"
+}
